@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import Navbar from './components/navbar'
- import ReminderList from './components/ReminderList'
+import ReminderList from './components/ReminderList'
 import Home from './components/home'
 import data from './data.json'
 import Card from './components/Card'
-import ReminderList from './components/ReminderList'
 const url = "https://polar-reaches-88179.herokuapp.com/"
 
 class App extends Component {
