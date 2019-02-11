@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import Navbar from './components/navbar'
-import ReminderList from './components/ReminderList'
 import Home from './components/home'
 import data from './data.json'
-import Card from './components/Card'
+import ReminderList from './components/ReminderList'
 const url = "https://polar-reaches-88179.herokuapp.com/"
 
 class App extends Component {
@@ -61,7 +60,7 @@ class App extends Component {
   selectTask = (event) => {
     // event.preventDefault()
     const description = this.state.reminders.filter(item => item.name === event.value)
-      
+      console.log(event.value)
     this.setState({
       name: event.value,
       description: description[0].description,
@@ -104,7 +103,7 @@ class App extends Component {
               options={this.state.taskName}
               selectTask={this.selectTask}
               setTask={this.setTask} />} />
-           <Route path="/reminders/"  render={() => <ReminderList 
+            <Route path="/reminders/"  render={() => <ReminderList 
               // date={this.state.date}
               // taskName={this.state.taskName}
               // taskDescription={this.state.taskDescription}
@@ -117,4 +116,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App; 

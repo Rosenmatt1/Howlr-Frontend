@@ -1,15 +1,15 @@
 import React from 'react'
 import Card from './Card'
-import { props } from 'bluebird';
+// import { props } from 'bluebird';
 
-const ReminderList = (props) => {
+const ReminderList = ({remindersTable}) => {
     return (
-     props.remindersTable.map(reminder => {
+    remindersTable.map(reminder => {
         return(
-            <div><Card reminder={reminder} reminderName={reminder.name} reminderDescription={reminder.description}/></div>
+            <div><Card reminder={reminder} /></div>
         )
     })
 )
 }
 
-export default ReminderList
+export default ReminderList 
