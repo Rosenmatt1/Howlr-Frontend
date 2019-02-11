@@ -16,7 +16,8 @@ class App extends Component {
       date: '',
       name: '',
       taskName: data.reminders.map(item => item.name),
-      taskDescription: data.reminders.map(item => item.name)
+      taskDescription: data.reminders.map(item => item.name),
+      remindersTable: []
     }
   }
 
@@ -107,7 +108,7 @@ class App extends Component {
               // date={this.state.date}
               // taskName={this.state.taskName}
               // taskDescription={this.state.taskDescription}
-              remindersTable={this.state.reminders}
+              remindersTable={this.state.remindersTable}
           /> } /> 
           </div>
         </Router>
