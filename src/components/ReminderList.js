@@ -1,12 +1,11 @@
 import React from 'react'
-import Card from './Card'
-// import { props } from 'bluebird';
+import Card from './card'
 
-const ReminderList = ({remindersTable}) => {
+const ReminderList = (props) => {
     return (
-    remindersTable.map(reminder => {
+    props.remindersTable.map((reminder, idx) => {
         return(
-            <div><Card reminder={reminder} /></div>
+            <Card deleteReminder={props.deleteReminder} key={idx} reminder={reminder} />
         )
     })
 )

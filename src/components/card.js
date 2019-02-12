@@ -1,7 +1,6 @@
 import React from 'react'
-import { props } from 'bluebird';
 
-const Card = ({reminder}) => {
+const Card = (props) => {
     return (
       <div className="bigDiv">
           <div className="section row">
@@ -10,14 +9,14 @@ const Card = ({reminder}) => {
                 <div className="cards">
                   <div className="card-content black-text">
                     <span className="black-text card-title">Don't Forget . . .         </span>
-                    <span className="right">{reminder.date}</span>
-                    <h4>{reminder.name}</h4>
-                    <p>{reminder.description}</p>
+                    <span className="right">{props.reminder.date}</span>
+                    <h4>{props.reminder.name}</h4>
+                    <p>{props.reminder.description}</p>
                   </div>
                   <div className="black-text card-action">
                     <div className="black-text features">
                       <a href="/#">Update</a>
-                      <a href="/#">Delete</a>
+                      <button className="DeleteButton" onClick={() => props.deleteReminder()}>Delete</button>
                     </div>
                   </div>
                 </div>

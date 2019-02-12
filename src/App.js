@@ -37,25 +37,27 @@ class App extends Component {
     });
   }
 
-  // deleteReminder = async (e) => {
-  //   e.preventDefault()
-  //   const removeReminder = this.state.remindersTable.filter(item => {
-  //     if (item.id === ???) {
-  //     }
-  //     return !item.id
-  //   })
-  //   await fetch('https://polar-reaches-88179.herokuapp.com/reminders/???', {
-  //     method: 'DELETE',
-  //     body: JSON.stringify(removeReminder),
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'Accept': 'application/json',
-  //     }
-  //   })
-  //   this.setState({
-  //     remindersTable: removeReminder,
-  //   })
-  // }
+  deleteReminder = () => {
+    // e.preventDefault()
+    console.log('delete things')
+    // const removeReminder = this.state.remindersTable.filter(item => {
+    //   if (item.id === ???
+    //     ) {
+    //   }
+    //   return !item.id
+    // })
+    // await fetch('https://polar-reaches-88179.herokuapp.com/reminders/???', {
+    //   method: 'DELETE',
+    //   body: JSON.stringify(removeReminder),
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     'Accept': 'application/json',
+    //   }
+    // })
+    // this.setState({
+    //   remindersTable: removeReminder,
+    // })
+  }
 
   selectTask = (event) => {
     // event.preventDefault()
@@ -107,7 +109,8 @@ class App extends Component {
               // date={this.state.date}
               // taskName={this.state.taskName}
               // taskDescription={this.state.taskDescription}
-              remindersTable={this.state.remindersTable}
+              remindersTable={this.state.remindersTable} 
+              deleteReminder={this.deleteReminder}
           /> } /> 
           </div>
         </Router>
