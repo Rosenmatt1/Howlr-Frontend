@@ -16,7 +16,7 @@ const Card = (props) => {
                   <div className="black-text card-action">
                     <div className="black-text features">
                       <a href="/#">Update</a>
-                      <button className="DeleteButton" onClick={() => props.deleteReminder()}>Delete</button>
+                      <button className="DeleteButton" onClick={() => props.deleteReminder(props.reminder.id)}>Delete</button>
                     </div>
                   </div>
                 </div>

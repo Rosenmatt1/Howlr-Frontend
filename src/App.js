@@ -37,26 +37,27 @@ class App extends Component {
     });
   }
 
-  deleteReminder = () => {
+  deleteReminder = async (id) => {
     // e.preventDefault()
-    console.log('delete things')
-    // const removeReminder = this.state.remindersTable.filter(item => {
-    //   if (item.id === ???
-    //     ) {
-    //   }
-    //   return !item.id
-    // })
-    // await fetch('https://polar-reaches-88179.herokuapp.com/reminders/???', {
-    //   method: 'DELETE',
-    //   body: JSON.stringify(removeReminder),
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     'Accept': 'application/json',
-    //   }
-    // })
-    // this.setState({
-    //   remindersTable: removeReminder,
-    // })
+    const removeReminder = this.state.remindersTable.filter(item => {
+      if (item.id === id
+        ) {
+      }
+      return item.id
+    })
+    const returnTheRest = this.state.remindersTable.filter(item => item.id !== id)
+
+    await fetch(`https://polar-reaches-88179.herokuapp.com/reminders/${id}`, {
+      method: 'DELETE',
+      body: JSON.stringify(removeReminder),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }
+    })
+    this.setState({
+      remindersTable: returnTheRest,
+    })
   }
 
   selectTask = (event) => {
