@@ -9,7 +9,12 @@ const Home = (props) => {
 
       <div className="section center-align">
         <h3>When do you need, Momma?</h3>
-          <Calendar clickDate={props.clickDate} />
+          <Calendar 
+            clickDate={props.clickDate}
+            name={props.name}
+            date={props.date}
+            datePicked={props.datePicked}
+          />
       </div>
 
       <br></br>

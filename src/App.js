@@ -35,7 +35,8 @@ class App extends Component {
   clickDate = (event) => {
   var stringified = event.toString()
     this.setState({
-      date: stringified.slice(0, 15)
+      date: stringified.slice(0, 15),
+      datePicked: true
     });
   }
 
@@ -70,6 +71,7 @@ class App extends Component {
       description: description[0].description,
       namePicked: true
       });
+      console.log(this.state.name)
   }
 
   setTask = async (event) => {
@@ -108,7 +110,9 @@ class App extends Component {
               selectTask={this.selectTask}
               setTask={this.setTask}
               name={this.state.name}
+              date={this.state.date}
               namePicked={this.state.namePicked}
+              datePicked={this.state.datePicked}
               />}/>
             <Route path="/reminders/"  render={() => <ReminderList 
               // date={this.state.date}
