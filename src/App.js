@@ -15,7 +15,7 @@ class App extends Component {
       date: '',
       name: '',
       taskName: data.reminders.map(item => item.name),
-      taskDescription: data.reminders.map(item => item.name),
+      taskDescription: data.reminders.map(item => item.description),
       remindersTable: []
     }
   }
