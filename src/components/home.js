@@ -16,8 +16,12 @@ const Home = (props) => {
       <br></br>
 
       <div className="section center-align">
-        <DropDownTasks options={props.options} 
-        selectTask={props.selectTask}/>
+        <DropDownTasks 
+          options={props.options} 
+          selectTask={props.selectTask}
+          name={props.name}
+          namePicked={props.namePicked}
+        />
       </div>
 
       <br></br>

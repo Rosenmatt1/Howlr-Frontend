@@ -16,7 +16,9 @@ class App extends Component {
       name: '',
       taskName: data.reminders.map(item => item.name),
       taskDescription: data.reminders.map(item => item.description),
-      remindersTable: []
+      remindersTable: [],
+      namePicked: false,
+      datePicked: false
     }
   }
 
@@ -46,7 +48,6 @@ class App extends Component {
       return item.id
     })
     const returnTheRest = this.state.remindersTable.filter(item => item.id !== id)
-
     await fetch(`https://polar-reaches-88179.herokuapp.com/reminders/${id}`, {
       method: 'DELETE',
       body: JSON.stringify(removeReminder),
@@ -67,6 +68,7 @@ class App extends Component {
     this.setState({
       name: event.value,
       description: description[0].description,
+      namePicked: true
       });
   }
 
@@ -77,7 +79,6 @@ class App extends Component {
       date: this.state.date,
       name: this.state.name,
       description: this.state.description
-
     }
     console.log(newReminder)
     await fetch('https://polar-reaches-88179.herokuapp.com/reminders/', {
@@ -105,7 +106,10 @@ class App extends Component {
               clickDate={this.clickDate} 
               options={this.state.taskName}
               selectTask={this.selectTask}
-              setTask={this.setTask} />} />
+              setTask={this.setTask}
+              name={this.state.name}
+              namePicked={this.state.namePicked}
+              />}/>
             <Route path="/reminders/"  render={() => <ReminderList 
               // date={this.state.date}
               // taskName={this.state.taskName}
