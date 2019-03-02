@@ -21,12 +21,16 @@ const Home = (props) => {
       <br></br>
 
       <div className="section center-align">
-        <DropDownTasks 
-          options={props.options} 
-          selectTask={props.selectTask}
-          name={props.name}
-          namePicked={props.namePicked}
-        />
+        { props.namePicked
+          ? <p className="center-align">Selected Task: {props.name}</p>
+          : <DropDownTasks 
+            options={props.options} 
+            selectTask={props.selectTask}
+            name={props.name}
+            namePicked={props.namePicked}
+            />
+        }
+
       </div>
 
       <br></br>
