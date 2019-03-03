@@ -22,7 +22,7 @@ const Home = (props) => {
 
       <div className="section center-align">
         { props.namePicked
-          ? <p className="center-align">Selected Task: {props.name}</p>
+          ? <p className="center-align">Selected Task:  {props.name}</p>
           : <DropDownTasks 
             options={props.options} 
             selectTask={props.selectTask}

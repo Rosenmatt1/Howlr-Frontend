@@ -7,6 +7,10 @@ import data from './data.json'
 import ReminderList from './components/ReminderList'
 const url = "https://polar-reaches-88179.herokuapp.com/"
 
+// http://localhost:8082/api/messages/
+
+// https://howlr.herokuapp.com/
+
 class App extends Component {
   constructor(props){
     super(props)
@@ -23,7 +27,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    fetch('https://polar-reaches-88179.herokuapp.com/')
+    fetch(url)
     .then (data => data.json())
       .then (res => {
         this.setState ({
@@ -49,7 +53,7 @@ class App extends Component {
       return item.id
     })
     const returnTheRest = this.state.remindersTable.filter(item => item.id !== id)
-    await fetch(`https://polar-reaches-88179.herokuapp.com/reminders/${id}`, {
+    await fetch(`${url}reminders/${id}`, {
       method: 'DELETE',
       body: JSON.stringify(removeReminder),
       headers: {
@@ -83,7 +87,7 @@ class App extends Component {
       description: this.state.description
     }
     console.log(newReminder)
-    await fetch('https://polar-reaches-88179.herokuapp.com/reminders/', {
+    await fetch(`${url}reminders/`, {
       method: 'POST',
       body: JSON.stringify(newReminder),
       headers: {
@@ -94,8 +98,36 @@ class App extends Component {
     this.setState({
      remindersTable: [...this.state.remindersTable, newReminder],
     })
-    
   }
+
+
+  // editReminder = async (e) => {
+  //   e.preventDefault()
+  //   const editedReminder = {
+  //     description: this.state.newDescription,
+  //     name: this.state.newName
+  //   }
+  //   const mappedCards = this.state.flashcards.map(card => {
+  //     if (this.state.flashcards[this.state.index].id === card.id) {
+  //       this.state.flashcards[this.state.index].name = this.state.newMethod
+  //       this.state.flashcards[this.state.index].description = this.state.newDescription
+  //       this.state.flashcards[this.state.index].link = this.state.newLink
+  //     }
+  //     return card
+  //   })
+  //   await fetch(`url${this.state.flashcards[this.state.index].id}`, {
+  //     method: 'PUT',
+  //     body: JSON.stringify(editedFlash),
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'Accept': 'application/json',
+  //     }
+  //   })
+  //   this.setState({
+  //     flashcards: mappedCards,
+  //     edit: false,
+  //   })
+  // }
 
 
   render() {
