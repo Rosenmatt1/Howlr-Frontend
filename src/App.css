@@ -1,5 +1,6 @@
 .callMomButton {
   border: none;
+  cursor: pointer;
 }
 
 .bigDiv {

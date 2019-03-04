@@ -8,7 +8,7 @@ const Home = (props) => {
     <div class="container">
 
       <div className="section center-align">
-        <h3>When do you need, Momma?</h3>
+        <h3>When do you need Momma?</h3>
           <Calendar 
             clickDate={props.clickDate}
             name={props.name}
